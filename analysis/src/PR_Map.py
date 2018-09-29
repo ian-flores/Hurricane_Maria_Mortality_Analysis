@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[9]:
+# In[6]:
 
 
 import geopandas as gpd
@@ -12,27 +12,27 @@ import numpy as np
 import os
 
 
-# In[3]:
+# In[7]:
 
 
 os.system("wget 'https://raw.githubusercontent.com/miguelrios/atlaspr/master/geotiles/pueblos.json'")
 os.system("mv 'pueblos.json' 'data/'")
 
 
-# In[4]:
+# In[3]:
 
 
 geo_muni = gpd.read_file('data/pueblos.json')
 geo_muni.head()
 
 
-# In[5]:
+# In[4]:
 
 
 geo_muni.plot()
 
 
-# In[6]:
+# In[5]:
 
 
 municipalities = []
@@ -95,7 +95,7 @@ geo_muni.plot(column = 'death_rate',
               linewidth = 0.3)
 
 fig = plt.gcf()
-fig.set_size_inches(6, 5.5)
+fig.set_size_inches(7, 6)
 fig.set_dpi(150)
 plt.title("Mortality rate per 1,000 individuals\n Timeframe from September 20, 2017 to June 2018\n (Top 10 municipalities with highest rate annotated)")
 ax.set_axis_off()
@@ -116,7 +116,7 @@ plt.text(-65.70, 17.95,
 plt.arrow(-65.55, 18.00, 0.07, 0.06, head_width = 0.02)
 
 ## Hormigueros
-plt.text(-67.78, 18.21,
+plt.text(-67.73, 18.21,
         'Hormigueros: ' + 
          str(round(geo_muni[geo_muni['NAME'] == 'HORMIGUEROS'].at[64, 'death_rate'], 2)),
          fontsize = 8)
