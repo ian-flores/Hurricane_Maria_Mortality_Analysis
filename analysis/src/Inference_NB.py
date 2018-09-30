@@ -171,6 +171,13 @@ pm.plot_posterior(trace, varnames = ['difference of means'], color = '#0d98ba', 
 plt.savefig('figs/difference_of_means.png')
 
 
+# In[ ]:
+
+
+pm.plot_posterior(trace, varnames = ['difference of stds'], color = '#0d98ba', ref_val=0)
+plt.savefig('figs/difference_of_stds.png')
+
+
 # In[129]:
 
 
